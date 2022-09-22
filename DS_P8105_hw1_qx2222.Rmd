@@ -22,7 +22,7 @@ print(penguins)
 ###description of the penguins dataset
 
 
-1. In "penguins" dataset, names of important variables are `r colnames(penguins)`. Among those important varibales, there are three types of value, <fctr>(factor,  categorical variables with fixed possible values), <dbl>(numeric values with decimal points), <int>(integer values).
+1. In "penguins" dataset, names of important variables are `r colnames(penguins)`. Among those important varibales, there are three types of value, <fctr>(factor variable), <dbl>(numeric variable with decimal points), <int>(integer variable).
 
 2. The dataset has `r nrow(penguins)` rows and `r ncol(penguins)` column.
 
@@ -61,3 +61,31 @@ mean(pull(df_prob2, var = vec_char)) #mean of vec_char variable
 mean(pull(df_prob2, var = vec_factor)) #mean of vec_factor variable
 ```
 From the output, the means of norm_sample variable and vec_logical variable could be calculated. However, it doesn't work to calculate the means of vec_char variable and vec_factor variable. 
+
+
+###Then, convert variables to numeric type
+
+```{r,results='hide',warning=FALSE}
+new_vec_logical = as.numeric(df_prob2$vec_logical)
+new_vec_logical
+
+new_vec_char = as.numeric(df_prob2$vec_char)
+new_vec_char
+
+new_vec_factor = as.numeric(df_prob2$vec_factor)
+new_vec_factor
+```
+For converted logical variable(new_vec_logical), "TRUE" changed to numeric number of "1" and "FLASE" changed to numeric number of "0".
+For converted logical variable(new_vec_logical), warning shows "NA was generated during the forced change". Because character variable could not be changed to numeric type.
+For converted logical variable(new_vec_factor), "high" changed to numeric number of "1". "low" changed to numeric number of "2". "medium" changed to numeric number of "3".
+
+
+###calculate the mean of converted variables
+
+```{r}
+mean(new_vec_logical) #mean of new_vec_logical variable
+mean(new_vec_char) #mean of new_vec_char variable
+mean(new_vec_factor) #mean of new_vec_factor variable
+```
+
+The results during converting variables to numeric type progress could help me explain why the mean of converted character variable is NA. However, we could get the mean of converted logical and factor variables. 
