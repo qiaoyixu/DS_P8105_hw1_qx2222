@@ -36,5 +36,28 @@ ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)
 ggsave("penguins_scatter_prob1.pdf", width = 4, height = 6)
 ```
 
+**Problem 2**
 
+###create the dataframe
 
+```{r}
+df_prob2 = tibble(
+  norm_sample = rnorm(n=10),
+  vec_logical = norm_sample>0,
+  vec_char = c("a", "b","c", "d", "e","f","j","h", "i", "g"),
+  vec_factor = factor(c("low", "medium", "high", "low", "medium", "high","low", "medium", "high", "low"))
+)
+
+df_prob2
+
+```
+
+###calculate the mean of each variable in dataframe
+
+```{r, warning=FALSE}
+mean(pull(df_prob2, var = norm_sample)) #mean of norm_sample variable
+mean(pull(df_prob2, var = vec_logical)) #mean of vec_logical variable
+mean(pull(df_prob2, var = vec_char)) #mean of vec_char variable
+mean(pull(df_prob2, var = vec_factor)) #mean of vec_factor variable
+```
+From the output, the means of norm_sample variable and vec_logical variable could be calculated. However, it doesn't work to calculate the means of vec_char variable and vec_factor variable. 
