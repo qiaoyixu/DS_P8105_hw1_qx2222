@@ -33,7 +33,7 @@ print(penguins)
 
 ```{r, warning=FALSE}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() #scatter plot
-ggsave("penguins_scatter_prob1.pdf", width = 4, height = 6) #export the scatter plot
+ggsave("penguins_scatter_prob1.pdf", width = 6, height = 4) #export the scatter plot
 ```
 
 **Problem 2**
