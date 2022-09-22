@@ -70,7 +70,7 @@ new_vec_logical = as.numeric(df_prob2$vec_logical)
 new_vec_logical
 
 new_vec_char = as.numeric(df_prob2$vec_char)
-new_vec_char
+new_vec_char 
 
 new_vec_factor = as.numeric(df_prob2$vec_factor)
 new_vec_factor
@@ -88,4 +88,4 @@ mean(new_vec_char) #mean of new_vec_char variable
 mean(new_vec_factor) #mean of new_vec_factor variable
 ```
 
-The results during converting variables to numeric type progress could help me explain why the mean of converted character variable is NA. However, we could get the mean of converted logical and factor variables. 
+The results during converting variables to numeric type progress could help me explain why the mean of converted character variable is NA.Also, we could know why the mean of converted logical and factor variables could be calculated. 
