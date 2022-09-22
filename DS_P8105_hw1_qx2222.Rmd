@@ -1,0 +1,34 @@
+---
+title: "DS_P8105_hw1_qx2222"
+author: "Qiaoyi Xu"
+date: "2022-09-18"
+output: github_document
+---
+
+```{r,results='hide'}
+library(tidyverse)
+```
+
+
+**Problem 1**
+
+###load the penguins dataset
+
+```{r}
+data("penguins", package = "palmerpenguins")
+print(penguins) 
+```
+
+###description of the penguins dataset
+
+
+1. In "penguins" dataset, names of important variables are `r colnames(penguins)`. Among those important varibales, there are three types of value, <fctr>(factor,  categorical variables with fixed possible values), <dbl>(numeric values with decimal points), <int>(integer values).
+
+2. The dataset has `r nrow(penguins)` rows and `r ncol(penguins)` column.
+
+3. The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`.
+
+
+
+
+
