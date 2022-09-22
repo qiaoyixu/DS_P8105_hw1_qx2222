@@ -29,6 +29,12 @@ print(penguins)
 3. The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`.
 
 
+###create scatter plot
+
+```{r, warning=FALSE}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+ggsave("penguins_scatter_prob1.pdf", width = 4, height = 6)
+```
 
 
 
